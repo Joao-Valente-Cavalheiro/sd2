@@ -29,13 +29,48 @@ def trocar_base(entrada,base,potencia):
 
     x+=1
     potencia = potencia - 1
-    
-  print(soma)
+  return soma
+  
+
+def comparacao(hexa):
+  if hexa == 1:
+    return "Load"
+  elif hexa == 2:
+    return "Store"
+  elif hexa == 3:
+    return "Add X"
+  elif hexa == 4:
+    return "Subt"
+  elif hexa == 5:
+    return "Input"
+  elif hexa == 6:
+    return "Output"
+  elif hexa == 7:
+    return "Halt"
+  elif hexa == 8:
+    return "Skipcond"
+  elif hexa == 9:
+    return "Jump"
+  elif hexa == 10:
+    return "LoadImmi"
+  elif hexa == 10:
+      return "Clear"
+  elif hexa == 11:
+      return "AddI"
+  elif hexa == 12:
+      return "JumpI"
+  elif hexa == 13:
+    return "LoadI"
+  elif hexa == 14:
+    return "StoreI"
+  
 
  
 
 # Executa o programa
 entrada = input()
 aux, aux2 = separa_4_primeiros_bits(entrada)
-trocar_base(aux,16,3) #PRECISO QUE A ENTRADA SEJA QUATRO PRIMEIROS 
-trocar_base(aux2,2,11) #PRECISO QUE A ENTRADA SEJA QUATRO EM DIANTE
+hexa = trocar_base(aux,2,3) # QUATRO PRIMEIROS 
+ultimos = trocar_base(aux2,2,11) # QUATRO EM DIANTE
+primeiros = comparacao(hexa)
+print(primeiros,ultimos)
