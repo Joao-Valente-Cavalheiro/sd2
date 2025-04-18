@@ -77,6 +77,7 @@ def escrever_no_arquivo(funcao, decimal):
   while x < nf:
     arquivo.write(str(funcao[x]) +" " + str(decimal[j]) + "\n")
     x = x+1
+    j = j+1
   arquivo.close()
 
 funcao = []
@@ -87,8 +88,10 @@ while linha:
   linha = linha.strip() 
   quatroBit,dozeBit=separa_4_primeiros_bits(linha)
   hexa = trocar_base(quatroBit,2,3)
+ 
   funcao.append(comparacao(hexa))
   decimal.append(trocar_base(dozeBit,2,11))
+
   
   linha = entradas.readline()
 
