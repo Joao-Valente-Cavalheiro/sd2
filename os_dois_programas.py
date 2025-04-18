@@ -33,7 +33,7 @@ def trocar_base(entrada,base,potencia):
   
 
 def comparacao(hexa):
-  if hexa == 0:
+  if hexa == 0: 
     return "JnS"
   elif hexa == 1:
     return "Load"
@@ -48,7 +48,7 @@ def comparacao(hexa):
   elif hexa == 6:
     return "Output"
   elif hexa == 7:
-    return "Halt"
+    return "Halt" #esse halt teria que parar o programa, dai nao sei como prosseguir, se colocar ele no final do txt da o return " " , se ele tiver no meio tem que desconsiderar as outras entradas, sacou?
   elif hexa == 8:
     return "Skipcond"
   elif hexa == 9:
