@@ -54,7 +54,7 @@ def comparacao(hexa):
   elif hexa == 9:
     return "Jump"
   elif hexa == 10:
-    return f"LoadImmi {ultimos}\nClear" #LoadImmi não aparece no ava mas ta na tabela do git, no ava só tem Load e LoadI R: mas se tem no git tem que ter no codigo
+    return f"LoadImmi" #LoadImmi não aparece no ava mas ta na tabela do git, no ava só tem Load e LoadI R: mas se tem no git tem que ter no codigo
   # elif hexa == 10:
   #     return "Clear"
   elif hexa == 11:
@@ -66,14 +66,25 @@ def comparacao(hexa):
   elif hexa == 14:
     return "StoreI"
   
+def escrever_no_arquivo(funcao, decimal):
+  nf = len(funcao)
+  nv = len(decimal)
+  if nf != nv:
+    print("fudeu")
+  arquivo = open("saida.txt",'w')
+  x = 0
+  j = 0
+  while x < nf:
+    arquivo.write(str(funcao[x]) +" " + str(decimal[j]) + "\n")
+    x = x+1
+  arquivo.close()
 
- 
-
-funcao=[]
+funcao = []
 decimal = []
 entradas = open("entrada.txt",'r')
 linha = entradas.readline()
 while linha:
+  linha = linha.strip() 
   quatroBit,dozeBit=separa_4_primeiros_bits(linha)
   hexa = trocar_base(quatroBit,16,4)
   funcao.append(comparacao(hexa))
@@ -81,3 +92,5 @@ while linha:
   
   linha = entradas.readline()
 
+entradas.close()
+escrever_no_arquivo(funcao,decimal)
