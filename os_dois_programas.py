@@ -48,13 +48,13 @@ def comparacao(hexa):
   elif hexa == 6:
     return "Output"
   elif hexa == 7:
-    return "Halt" #esse halt teria que parar o programa, dai nao sei como prosseguir, se colocar ele no final do txt da o return " " , se ele tiver no meio tem que desconsiderar as outras entradas, sacou?
+    return "Halt" #esse halt teria que parar o programa, dai nao sei como prosseguir, se colocar ele no final do txt da o return " " , se ele tiver no meio tem que desconsiderar as outras entradas, sacou? saquei
   elif hexa == 8:
     return "Skipcond"
   elif hexa == 9:
     return "Jump"
   elif hexa == 10:
-    return f"LoadImmi {ultimos}\nClear" #LoadImmi não aparece no ava mas ta na tabela do git, no ava só tem Load e LoadI
+    return f"LoadImmi {ultimos}\nClear" #LoadImmi não aparece no ava mas ta na tabela do git, no ava só tem Load e LoadI R: mas se tem no git tem que ter no codigo
   # elif hexa == 10:
   #     return "Clear"
   elif hexa == 11:
@@ -69,10 +69,15 @@ def comparacao(hexa):
 
  
 
-# Executa o programa
-entrada = input()
-aux, aux2 = separa_4_primeiros_bits(entrada)
-hexa = trocar_base(aux,2,3) # QUATRO PRIMEIROS 
-ultimos = trocar_base(aux2,2,11) # QUATRO EM DIANTE
-primeiros = comparacao(hexa)
-print(primeiros,ultimos)
+funcao=[]
+decimal = []
+entradas = open("entrada.txt",'r')
+linha = entradas.readline()
+while linha:
+  quatroBit,dozeBit=separa_4_primeiros_bits(linha)
+  hexa = trocar_base(quatroBit,16,4)
+  funcao.append(comparacao(hexa))
+  decimal.append(trocar_base(dozeBit,2,12))
+  
+  linha = entradas.readline()
+
