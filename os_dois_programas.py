@@ -52,9 +52,9 @@ def comparacao(hexa):
   elif hexa == 9:
     return "Jump"
   elif hexa == 10:
-    return "LoadImmi"
-  elif hexa == 10:
-      return "Clear"
+    return f"LoadImmi {ultimos}\nClear"
+  # elif hexa == 10:
+  #     return "Clear"
   elif hexa == 11:
       return "AddI"
   elif hexa == 12:
