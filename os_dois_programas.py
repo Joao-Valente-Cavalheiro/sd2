@@ -30,12 +30,16 @@ def trocar_base(entrada,base,potencia):
     x+=1
     potencia = potencia - 1
     
-  print(soma)
+  return soma
 
  
-
-# Executa o programa
-entrada = input()
-aux, aux2 = separa_4_primeiros_bits(entrada)
-trocar_base(aux,16,3) #PRECISO QUE A ENTRADA SEJA QUATRO PRIMEIROS 
-trocar_base(aux2,2,11) #PRECISO QUE A ENTRADA SEJA QUATRO EM DIANTE
+funcao=[]
+decimal = []
+entradas = open("entrada.txt",'r')
+linha = entradas.readline()
+while linha:
+  quatroBit,dozeBit=separa_4_primeiros_bits(linha)
+  funcao.append("FUNÇAO QUE RETORNA A STRING COM O NOME DA FUNÇÃO")
+  decimal.append(trocar_base(dozeBit,2,12))
+  
+  linha = entradas.readline()
