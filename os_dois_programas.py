@@ -86,9 +86,9 @@ linha = entradas.readline()
 while linha:
   linha = linha.strip() 
   quatroBit,dozeBit=separa_4_primeiros_bits(linha)
-  hexa = trocar_base(quatroBit,16,4)
+  hexa = trocar_base(quatroBit,2,3)
   funcao.append(comparacao(hexa))
-  decimal.append(trocar_base(dozeBit,2,12))
+  decimal.append(trocar_base(dozeBit,2,11))
   
   linha = entradas.readline()
 
