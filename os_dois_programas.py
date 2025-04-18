@@ -33,12 +33,14 @@ def trocar_base(entrada,base,potencia):
   
 
 def comparacao(hexa):
-  if hexa == 1:
+  if hexa == 0:
+    return "JnS"
+  elif hexa == 1:
     return "Load"
   elif hexa == 2:
     return "Store"
   elif hexa == 3:
-    return "Add X"
+    return "Add"  
   elif hexa == 4:
     return "Subt"
   elif hexa == 5:
@@ -52,7 +54,7 @@ def comparacao(hexa):
   elif hexa == 9:
     return "Jump"
   elif hexa == 10:
-    return f"LoadImmi {ultimos}\nClear"
+    return f"LoadImmi {ultimos}\nClear" #LoadImmi não aparece no ava mas ta na tabela do git, no ava só tem Load e LoadI
   # elif hexa == 10:
   #     return "Clear"
   elif hexa == 11:
